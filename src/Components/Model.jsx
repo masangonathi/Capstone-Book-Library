@@ -1,22 +1,27 @@
 import React from 'react';
 
-const Model = () => {
+const Model = ({show,item,onClose}) => {
+    if(!show)
+    {
+        return null;
+    }
+    let thumbnail=item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
   return (
     <div className='overlay'>
         <div className="overlay-inner">
-            <button className="close">
-
+            <button className="close" onClick={onClose}>
+            
             </button>
             <div className="inner-box">
-                <img src="" alt="" />
+                <img src={thumbnail} alt="" />
                 <div className="info">
-                    <h1> ReactJS by example - Building Modern web application with react</h1>
-                    <h3>Prathamesh Sonpatki</h3> <br />
-                    <h4>Packt Publishing Lts <span>2016-04-21</span> </h4> <br />
-                    <a href="#"><button>More</button></a>
+                    <h1> {item.volumeInfo.title}</h1>
+                    <h3>{item.volumeInfo.authors}</h3> 
+                    <h4>{item.volumeInfo.publisher} <span>{item.volumeInfo.publishedDate}</span> </h4> <br />
+                    <a href={item.volumeInfo.previewLink}><button>More</button></a>
                 </div>
             </div>
-            <h4 className="description"> Knowledge for free.. Get that job, you aspire for! want to switch and provide plenty of tips tricks for using ReactJs</h4>
+            <h4 className="description"> {item.volumeInfo.description}</h4>
         </div>
     </div>
   )

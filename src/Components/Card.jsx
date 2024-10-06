@@ -1,6 +1,10 @@
 import React from "react";
+import { useState } from "react";
+import Model from "./Model";
 const Card = ({ book }) => {
-    console.log(book)
+
+    const [show,setShow]=useState(false);
+    const [bookItem,setItem]=useState();
     return (
         <>
 
@@ -12,13 +16,14 @@ const Card = ({ book }) => {
                     {
                         return (
                             <>
-                            <div className="card">
+                            <div className="card" onClick={()=>{setShow(true);setItem(item)}}>
                                 <img src={thumbnail} alt=""/>
                                 <div className="bottom">
                                     <h3 className="title">{item.volumeInfo.title}</h3>
                                     <p className="amount">{amount}</p>
                                 </div>
                             </div>
+                            <Model show={show} item={bookItem} onClose={()=>setShow(false)}/>
                             </>
                         )
                     }

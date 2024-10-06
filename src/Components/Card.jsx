@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Model from "./Model";
+import BookDetails from "./BookDetails";
 const Card = ({ book }) => {
 
     const [show,setShow]=useState(false);
@@ -23,7 +23,7 @@ const Card = ({ book }) => {
                                     <p className="amount">{amount}</p>
                                 </div>
                             </div>
-                            <Model show={show} item={bookItem} onClose={()=>setShow(false)}/>
+                            <BookDetails show={show} item={bookItem} onClose={()=>setShow(false)}/>
                             </>
                         )
                     }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Model = ({show,item,onClose}) => {
+const BookDetails = ({show,item,onClose}) => {
     if(!show)
     {
         return null;
@@ -27,4 +27,4 @@ const Model = ({show,item,onClose}) => {
   )
 }
 
-export default Model;
+export default BookDetails;

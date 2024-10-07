@@ -10,7 +10,7 @@ const BookDetails = ({show,item,onClose}) => {
     <div className='overlay'>
         <div className="overlay-inner">
             <button className="close" onClick={onClose}>
-            
+            <i class="fa-solid fa-x"></i>
             </button>
             <div className="inner-box">
                 <img src={thumbnail} alt="" />

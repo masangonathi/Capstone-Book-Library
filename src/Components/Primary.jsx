@@ -1,6 +1,7 @@
 import react, { useState } from "react";
 import Card from "./Card";
 import axios from "axios";
+import { FaSearch } from "react-icons/fa";
 
 
 const Primary=()=>{
@@ -26,7 +27,7 @@ const Primary=()=>{
             <input type="text" placeholder="Enter Your Book Name"
             value={search} onChange={e=>setSearch(e.target.value)}
             onKeyPress={searchBook}/>
-            <button></button>
+            <button ><FaSearch className="icons-search"/></button>
         </div>
         <img src="" alt="" />
       </div>
